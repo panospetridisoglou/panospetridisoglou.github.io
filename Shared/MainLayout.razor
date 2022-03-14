@@ -1,0 +1,53 @@
+﻿@inherits LayoutComponentBase
+@inject NavigationManager nm
+<div style="max-width:1080px;margin:0 auto;">
+
+<div class="header">
+    <a class="logo">PANOS PETRIDISOGLOU</a>
+</div>
+<br />
+
+
+<div class="navbar" style="justify-content: unset;">
+    <a href="#"  @onclick="toggleSearch" @onclick:preventDefault class="nav-link"><span class="oi oi-magnifying-glass"></span></a>
+    <input @onkeydown="@Search" @ref="searchInput" @oninput="@((e) => { tag=(string)e.Value;})" class="@showSearchActive()" />
+    <NavLink class="nav-link " href=""  Match="NavLinkMatch.All">All Projects</NavLink>
+    <NavLink class="nav-link " href="search?tags=app">Apps</NavLink>
+    <NavLink class="nav-link " href="search?tags=game">Games</NavLink>
+    <NavLink class="nav-link " href="search?tags=art">Art</NavLink>
+    <NavLink class="nav-link " href="search?tags=inprogress">In Progress</NavLink>
+</div>
+<div class="page" style="padding:20px">
+    
+        @Body
+    
+</div>
+</div>
+@code{
+    ElementReference searchInput;
+
+
+    protected override void OnInitialized() => nm.LocationChanged += (s, e) => StateHasChanged();
+
+
+    public bool showSearch = false;
+
+    void toggleSearch()
+    {
+
+        showSearch = !showSearch;
+    }
+    string tag = "";
+    void Search(KeyboardEventArgs e)
+    {
+        if (e.Code == "Enter" || e.Code == "NumpadEnter")
+        {
+
+            nm.NavigateTo("search?tags=" + tag);
+        }
+    }
+
+    string showSearchActive()
+    { return showSearch ? "panos-search active" : "panos-search"; }
+
+}

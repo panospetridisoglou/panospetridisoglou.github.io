@@ -1,0 +1,8 @@
+<div class="navbar" style="justify-content: unset;">
+    <a class="nav-link" (click)="activateSearch()" clickable><ion-icon name="search"></ion-icon></a>
+    <input [ngClass]="['panos-search',searchClass]" />
+    <a class="nav-link " routerLink="" >All Projects</a>
+    <a class="nav-link "  routerLink="" [queryParams]="{ search: 'app' }">Apps</a>
+    <a class="nav-link "  routerLink="" [queryParams]="{ search: 'game' }">Games</a>
+    <a class="nav-link "  routerLink="" [queryParams]="{ search: 'art' }">Art</a>
+</div>

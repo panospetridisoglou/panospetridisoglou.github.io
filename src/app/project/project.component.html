@@ -1,0 +1,15 @@
+<div  class="panos-card" >
+    <div class="panos-tags" >
+            <a  *ngFor="let tag of item.tags " routerLink="" [queryParams]="{ search: '{{tag}}' }" class="panos-tag">{{tag}}</a>
+    </div>
+    <div style="height:10px" ></div>
+    <h5>{{ item.name | slice: 0:19 }}{{ item.name.length > 19 ? "..." : ""}}</h5>
+    <div style="height:10px" ></div>
+    <h6> {{ item.date | date:'longDate'}}  </h6>
+    <div style="height:2px" ></div>
+    <img src="{{item.icon}}" class="panos-card-image">
+    <div style="height:2px" ></div>
+    
+    <a *ngIf="( item.details.length>0  &&  item.details.length<100)" href="{{item.details}}" class="panos-card-show-more">Show More</a>
+    <a *ngIf="( item.details.length>100)" class="panos-card-show-more">Show More</a>
+</div>

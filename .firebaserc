@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "bio-site-panospet": {
+      "hosting": {
+        "Portfolio": [
+          "bio-site-panospet"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "bio-site-panospet"
+  }
+}

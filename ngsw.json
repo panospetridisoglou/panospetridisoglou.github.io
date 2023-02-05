@@ -1,0 +1,81 @@
+{
+  "configVersion": 1,
+  "timestamp": 1675629087091,
+  "index": "https://panospetridisoglou.github.io/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://panospetridisoglou.github.io/favicon.ico",
+        "https://panospetridisoglou.github.io/index.html",
+        "https://panospetridisoglou.github.io/main.3f01a430e6136d61.js",
+        "https://panospetridisoglou.github.io/manifest.webmanifest",
+        "https://panospetridisoglou.github.io/polyfills.169888185932dbd2.js",
+        "https://panospetridisoglou.github.io/runtime.0827999287446348.js",
+        "https://panospetridisoglou.github.io/styles.d189cdf28d2ff5cf.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "https://panospetridisoglou.github.io/assets/icons/icon-128x128.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-144x144.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-152x152.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-192x192.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-384x384.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-512x512.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-72x72.png",
+        "https://panospetridisoglou.github.io/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "https://panospetridisoglou.github.io/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "https://panospetridisoglou.github.io/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "https://panospetridisoglou.github.io/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "https://panospetridisoglou.github.io/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "https://panospetridisoglou.github.io/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "https://panospetridisoglou.github.io/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "https://panospetridisoglou.github.io/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "https://panospetridisoglou.github.io/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "https://panospetridisoglou.github.io/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "https://panospetridisoglou.github.io/index.html": "5864ed1061f67a9532cb4dc23624f80d62febf7b",
+    "https://panospetridisoglou.github.io/main.3f01a430e6136d61.js": "b30bb1325bf798b877441daa55c8b04fe93be914",
+    "https://panospetridisoglou.github.io/manifest.webmanifest": "ca6ecb95bbdd7ecaa694f288e6d2cefbc1764286",
+    "https://panospetridisoglou.github.io/polyfills.169888185932dbd2.js": "8622cd655169b736cbaa974559aae800652f7579",
+    "https://panospetridisoglou.github.io/runtime.0827999287446348.js": "abe8eb168e3f852d7be989da29c43ad9f0219c84",
+    "https://panospetridisoglou.github.io/styles.d189cdf28d2ff5cf.css": "d096203c60b01321d803e76cf028acc981f1a28f"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}

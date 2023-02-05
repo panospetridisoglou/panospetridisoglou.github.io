@@ -1,19 +1,14 @@
-<div style="max-width:1080px;margin:0 auto;">
+<div style="max-width:1080px;margin:0 auto;padding:10px;">
 
-  <div class="header">
+  <div class="header" style="padding-top:30px;padding-left:30px;">
       <a class="logo">PANOS PETRIDISOGLOU</a>
   </div>
   <br />
   
   
   <app-navbar></app-navbar>
-  <div class="page" style="padding:20px">
-      <div *ngFor="let item of ( items  | async )">
-        <app-project *ngIf=" search == '' || item.tags.includes(search.toUpperCase())" [item]="item"  ></app-project>
-      </div>
-          
-      
-  </div>
+  <app-project></app-project>
+     
   <div  class="footer-copyrights"> Copyrights 2023© <br >Template made with 🔮 by Panos Petridisoglou
   </div>
 </div>

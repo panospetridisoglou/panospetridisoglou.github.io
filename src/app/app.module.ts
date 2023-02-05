@@ -1,4 +1,4 @@
-import { NgModule, isDevMode } from '@angular/core';
+import { NgModule, isDevMode, SecurityContext } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +14,8 @@ import { FirestoreModule } from '@angular/fire/firestore';
 import { AngularFirestoreModule, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { MarkdownModule } from 'ngx-markdown'; 
+import { HttpClientModule, HttpClient } from '@angular/common/http'; 
 
 @NgModule({
   declarations: [
@@ -33,8 +35,8 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
     }),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),
-    AngularFirestoreModule
-
+    AngularFirestoreModule,    
+    MarkdownModule.forRoot() 
   ],
   providers: [       
      { provide: FIREBASE_OPTIONS, useValue: environment.firebase }

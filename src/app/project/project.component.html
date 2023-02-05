@@ -1,15 +1,25 @@
-<div  class="panos-card" >
+<div class="page" >
+
+<div  *ngFor="let item of ( items  | async )" 
+    id="{{item.name}}" 
+    [ngStyle]="{'display': search == '' || item.tags.includes(search.toUpperCase())?'block':'none'}" 
+    [ngClass]="['panos-card', (item==selectedItem?'active':'')]" >
     <div class="panos-tags" >
-            <a  *ngFor="let tag of item.tags " routerLink="" [queryParams]="{ search: '{{tag}}' }" class="panos-tag">{{tag}}</a>
+            <a  *ngFor="let tag of item.tags " routerLink="" [queryParams]="{ search: tag }" class="panos-tag">{{tag}}</a>
     </div>
     <div style="height:10px" ></div>
-    <h5>{{ item.name | slice: 0:19 }}{{ item.name.length > 19 ? "..." : ""}}</h5>
+    <h5 *ngIf="item==selectedItem">{{ item.name }}</h5>
+    <h5 *ngIf="item!=selectedItem">{{ item.name | slice: 0:19 }}{{ item.name.length > 19 ? "..." : ""}}</h5>
     <div style="height:10px" ></div>
     <h6> {{ item.date | date:'longDate'}}  </h6>
     <div style="height:2px" ></div>
-    <img src="{{item.icon}}" class="panos-card-image">
-    <div style="height:2px" ></div>
-    
-    <a *ngIf="( item.details.length>0  &&  item.details.length<100)" href="{{item.details}}" class="panos-card-show-more">Show More</a>
-    <a *ngIf="( item.details.length>100)" class="panos-card-show-more">Show More</a>
+    <div  *ngIf="item==selectedItem"  style="overflow: auto;height: calc(100vh - 150px);">
+        <div  style="padding:20px;overflow-wrap: anywhere;"  [innerHtml]="item.details"></div>
+    </div>
+
+    <img  *ngIf="item!=selectedItem" src="{{item.icon}}" class="panos-card-image">
+    <div  *ngIf="item!=selectedItem" style="height:2px" ></div>
+    <a *ngIf="(item!=selectedItem && item.details.length>0  &&  item.details.length<100)" href="{{item.details}}" class="panos-card-show-more">Show More</a>
+    <a *ngIf="(item!=selectedItem && item.details.length>100)" class="panos-card-show-more" (click)="showMore(item)" clickable>Show More</a>
+</div>
 </div>

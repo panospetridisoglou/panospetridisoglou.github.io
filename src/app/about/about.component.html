@@ -1,0 +1,33 @@
+<div style="
+    width: calc( 100% );
+    position: relative;
+">
+        <div style="text-align:center;margin-top:20vh; position: relative; ">
+            <img style="border:1px solid transparent;border-radius: 20em;max-width:250px;position: relative;
+            top: 0;
+            /* Add the blur effect */
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            left: 0;" 
+            src="https://i.imgur.com/fVlfMI3.png"/>
+            <div style="position: absolute; margin:0 auto; width:100%;margin-top:-245px">
+                <img style="border:1px solid rgba(0,0,0,0.2);border-radius: 20em;max-width:250px;" src="https://i.imgur.com/fVlfMI3.png"/>
+            </div>
+        </div>
+        <br>
+        <p style="text-align: center;">
+        <a class="logo">PANOS PETRIDISOGLOU</a>
+        
+        <br>
+        <br>
+        <button style=" background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        box-shadow: 0px 0px 5px black;border-radius: 2em; padding:20px;  padding-top:5px;padding-bottom:5px;color : white"  [routerLink]="['home']">CONTINUE</button>
+    </p>
+    <div style="width:100%;text-align: center;margin-top:calc( 80vh - 420px);">        
+        👇 <strong>Scroll</strong> to learn more 👇
+    </div>
+    <div class="panos-card active"   style="overflow: auto;height: unset!important;margin-left:0px"  >
+        <div  [innerHtml]="about"></div>
+    </div>
+</div>

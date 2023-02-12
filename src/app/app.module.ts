@@ -15,13 +15,17 @@ import { AngularFirestoreModule, AngularFirestoreCollection } from '@angular/fir
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown'; 
-import { HttpClientModule, HttpClient } from '@angular/common/http'; 
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AboutComponent } from './about/about.component';
+import { MainComponent } from './main/main.component'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    ProjectComponent
+    ProjectComponent,
+    AboutComponent,
+    MainComponent
   ],
   imports: [
     NgbModule,
@@ -41,7 +45,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
   providers: [       
      { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
-  bootstrap: [AppComponent],
+  bootstrap: [MainComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
   ],

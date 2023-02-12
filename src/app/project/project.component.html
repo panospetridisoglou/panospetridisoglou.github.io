@@ -1,6 +1,6 @@
 <div class="page" >
 
-<div  *ngFor="let item of ( items  | async )" 
+<div  *ngFor="let item of items" 
     id="{{item.name}}" 
     [ngStyle]="{'display': search == '' || item.tags.includes(search.toUpperCase())?'block':'none'}" 
     [ngClass]="['panos-card', (item==selectedItem?'active':'')]" >
@@ -19,7 +19,6 @@
 
     <img  *ngIf="item!=selectedItem" src="{{item.icon}}" class="panos-card-image">
     <div  *ngIf="item!=selectedItem" style="height:2px" ></div>
-    <a *ngIf="(item!=selectedItem && item.details.length>0  &&  item.details.length<100)" href="{{item.details}}" class="panos-card-show-more">Show More</a>
-    <a *ngIf="(item!=selectedItem && item.details.length>100)" class="panos-card-show-more" (click)="showMore(item)" clickable>Show More</a>
+    <a *ngIf="(item!=selectedItem )" class="panos-card-show-more" (click)="showMore(item)" clickable>Show More</a>
 </div>
 </div>

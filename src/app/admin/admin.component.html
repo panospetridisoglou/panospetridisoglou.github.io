@@ -1,0 +1,85 @@
+<div *ngIf="!accessKey">
+
+   <a href="https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A//www.googleapis.com/auth/datastore&
+include_granted_scopes=true&
+response_type=token&
+state=state_parameter_passthrough_value&
+redirect_uri=http%3A//panospetridisoglou.github.io/admin
+client_id=105141969644-06tcman659rdmlpurrerhsr21p2fh27i.apps.googleusercontent.com">Login</a>
+</div>
+
+
+
+<body *ngIf="accessKey.length>0">
+   <div style="position: fixed;right:0;top:0px;width: 250px;height:100vh;background: rgba(0,0,0,0.5);padding:10px;">
+      <a (click)="create()">Create New</a>
+      <br>
+      <a *ngFor="let project of posts" style="z-index: -100;cursor: pointer;"
+         (click)="edit(project)">{{project.fields["name"].stringValue}}<br></a>
+      <br>
+
+   </div>
+
+
+
+
+   <form [formGroup]="form">
+
+      <div class="panos-card"  (click)="enableEdit()">
+         <div class="panos-tags" *ngIf="!editMode">
+            <a *ngFor="let tag of currentTags.split(',') " class="panos-tag">{{tag}}</a>
+         </div>
+         <div class="panos-tags" *ngIf="editMode">
+            <input class="edit-control" formControlName="currentTags" (change)="preview()"
+               (keypress)="disableEdit($event)">
+         </div>
+         <div style="height:10px"></div>
+         <h5 *ngIf="!editMode">{{ currentName | slice: 0:19 }}{{ currentName.length > 19 ? "..." : ""}}</h5>
+         <h5 *ngIf="editMode"><input class="edit-control" formControlName="currentTitle" (change)="preview()"
+               (keypress)="disableEdit($event)"></h5>
+         <div style="height:10px"></div>
+         <h6> {{ currentDate | date:'longDate'}} </h6>
+         <div style="height:2px"></div>
+         <p *ngIf="editMode">Icon: <br><input class="edit-control" formControlName="currentIcon" (change)="preview()"
+               (keypress)="disableEdit($event)"></p>
+         <img  *ngIf="!editMode" src="{{currentIcon}}" class="panos-card-image">
+         <div  style="height:2px" ></div>
+         <a  *ngIf="!editMode" class="panos-card-show-more"  clickable>Show More</a>
+      </div>
+
+      <br>
+
+
+      <div class="panos-card active" style="margin:0px !important;" (click)="enableEdit()">
+         <div class="panos-tags" *ngIf="!editMode">
+            <a *ngFor="let tag of currentTags.split(',') " class="panos-tag">{{tag}}</a>
+         </div>
+         <div class="panos-tags" *ngIf="editMode">
+            <input class="edit-control" formControlName="currentTags" (change)="preview()"
+               (keypress)="disableEdit($event)">
+         </div>
+         <div style="height:10px"></div>
+         <h5 *ngIf="!editMode">{{ currentName }}</h5>
+         <h5 *ngIf="editMode"><input class="edit-control" formControlName="currentTitle" (change)="preview()"
+               (keypress)="disableEdit($event)"></h5>
+         <div style="height:10px"></div>
+         <h6> {{ currentDate | date:'longDate'}} </h6>
+         <div style="height:2px"></div>
+         <div style="overflow: auto;height: calc(100vh - 150px);">
+            <div *ngIf="!editMode" style="padding:20px;overflow-wrap: anywhere;" [innerHtml]="innerhtml"></div>
+            <div *ngIf="editMode" style="padding:20px;overflow-wrap: anywhere;"><textarea class="edit-control"
+                  style="width: 100%;height: 650px;" formControlName="currentDetails" (change)="preview()"></textarea>
+            </div>
+         </div>
+
+      </div>
+
+      <button (click)="upload()" style=" position:fixed;bottom:0px;right:0px;background: rgba(255, 255, 255, 0.15);
+        cursor: pointer;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        width:250px;
+        box-shadow: 0px 0px 5px black;border-radius: 2em; padding:20px;  padding-top:5px;padding-bottom:5px;color : white"  [routerLink]="['home']">SUBMIT</button>
+   </form>
+</body>
+
+<div style="height: 100%;"></div>

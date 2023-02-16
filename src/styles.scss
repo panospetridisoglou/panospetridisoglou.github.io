@@ -180,6 +180,20 @@ body {
     cursor: unset;
 }
 
+.panos-card-edit {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1em;
+    width: 100% !important;
+    margin: 10px;
+    padding: 10px;
+    height: 100vh !important;
+    min-height: 330px;
+    transition: all 0.2s;
+    margin-left:7px;
+    cursor: unset;
+}
+
 @media only screen and (max-width: 550px) {
     .panos-card {
     background: rgba(255, 255, 255, 0.1);
@@ -313,4 +327,17 @@ a,
 
 img {
     max-width: 100%;
+}
+
+.edit-control{
+    background: rgba(0,0,0,0.3);
+    border:0px;
+    color:white;
+    border:1px solid rgba(255, 255, 255, 0.397);
+    border-radius: 2em;
+    font-size: small;
+    padding:5px
+}
+.edit-control:focus{
+   outline: none;
 }

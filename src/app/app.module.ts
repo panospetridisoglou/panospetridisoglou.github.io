@@ -17,7 +17,9 @@ import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { MarkdownModule } from 'ngx-markdown'; 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
-import { MainComponent } from './main/main.component'; 
+import { MainComponent } from './main/main.component';
+import { AdminComponent } from './admin/admin.component'; 
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,15 @@ import { MainComponent } from './main/main.component';
     NavbarComponent,
     ProjectComponent,
     AboutComponent,
-    MainComponent
+    MainComponent,
+    AdminComponent
   ],
   imports: [
+    HttpClientModule,
     NgbModule,
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: !isDevMode(),
       // Register the ServiceWorker as soon as the application is stable

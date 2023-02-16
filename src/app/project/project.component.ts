@@ -13,16 +13,20 @@ declare function Nav_ScrollIntoView(item:string) :any;
   styleUrls: ['./project.component.scss']
 })
 export class ProjectComponent {
-selectedItem={};
-items: any[]=[];
-search: string ='';
-
+  @Input() selectedItem={}; 
+  items: any[]=[];
+  search: string ='';
+  
   public showMore(item:any){
     this.selectedItem=item;
     Nav_ScrollIntoView(item.name);
   }
+  public unselect(){
+    this.selectedItem={};
+  }
   
   constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer,firestore: AngularFirestore) {
+    this.items=[]
     this.search='';
      firestore.collection('projects').valueChanges().pipe(
       map(data => data.sort((a:any,b:any) => {

@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1676576805100,
+  "timestamp": 1676577300880,
   "index": "https://panospetridisoglou.github.io/index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "https://panospetridisoglou.github.io/favicon.ico",
         "https://panospetridisoglou.github.io/index.html",
-        "https://panospetridisoglou.github.io/main.85eb9595164bcfbd.js",
+        "https://panospetridisoglou.github.io/main.17edfca811d3990e.js",
         "https://panospetridisoglou.github.io/manifest.webmanifest",
         "https://panospetridisoglou.github.io/polyfills.169888185932dbd2.js",
         "https://panospetridisoglou.github.io/runtime.0827999287446348.js",
-        "https://panospetridisoglou.github.io/styles.cd7a983e4a996482.css"
+        "https://panospetridisoglou.github.io/styles.619e9a280058ec71.css"
       ],
       "patterns": []
     },
@@ -52,12 +52,12 @@
     "https://panospetridisoglou.github.io/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "https://panospetridisoglou.github.io/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "https://panospetridisoglou.github.io/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
-    "https://panospetridisoglou.github.io/index.html": "73410a79acae3a098a665d09cb547e1b8d96d93a",
-    "https://panospetridisoglou.github.io/main.85eb9595164bcfbd.js": "c0df2ce91ea9ff5ce9d7f03d3243248dab387772",
+    "https://panospetridisoglou.github.io/index.html": "642690fad9e08d1a434533ed53bff1b73780c9f3",
+    "https://panospetridisoglou.github.io/main.17edfca811d3990e.js": "b286978aee9b963593c32780c8ccc1cc33996d6a",
     "https://panospetridisoglou.github.io/manifest.webmanifest": "ca6ecb95bbdd7ecaa694f288e6d2cefbc1764286",
     "https://panospetridisoglou.github.io/polyfills.169888185932dbd2.js": "8622cd655169b736cbaa974559aae800652f7579",
     "https://panospetridisoglou.github.io/runtime.0827999287446348.js": "abe8eb168e3f852d7be989da29c43ad9f0219c84",
-    "https://panospetridisoglou.github.io/styles.cd7a983e4a996482.css": "eb658a6400d71d7e0915c86234b23d9180b6210f"
+    "https://panospetridisoglou.github.io/styles.619e9a280058ec71.css": "5398c974da30ffc2d18d4c12760893f3d5bd7c16"
   },
   "navigationUrls": [
     {

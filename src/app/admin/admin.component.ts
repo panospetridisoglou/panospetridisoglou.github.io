@@ -10,7 +10,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AdminComponent implements OnInit {
 
-
+  viewList=true;
   accessKey = '';
   posts: any[] = [];
   form: FormGroup;
@@ -36,7 +36,6 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
     this.accessKey = window.location.href.split(/(?:=|&)+/)[3]
     this.getData();
-    this.create();
   }
 
   toggleEdit() {
@@ -58,12 +57,17 @@ export class AdminComponent implements OnInit {
   }
 
   create() {
+    this.viewList=false;
     this.currentProject = null
     this.currentDate = ''
     this.currentIcon = ''
     this.currentName = ''
     this.currentTags = ''
     this.innerhtml = ''
+  }
+
+  goToList(){
+    this.viewList=true;
   }
 
   getData() {
@@ -81,6 +85,7 @@ export class AdminComponent implements OnInit {
   }
 
   edit(project: any) {
+    this.viewList=false;
     this.currentProject = project;
     this.form.get("currentTitle")?.setValue(project.fields["name"].stringValue)
     this.form.get("currentDetails")?.setValue(project.fields["details"].stringValue)

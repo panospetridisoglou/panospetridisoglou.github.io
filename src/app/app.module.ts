@@ -19,7 +19,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AboutComponent } from './about/about.component';
 import { MainComponent } from './main/main.component';
 import { AdminComponent } from './admin/admin.component'; 
-import { FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +34,7 @@ import { FormGroup, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     NgbModule,
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

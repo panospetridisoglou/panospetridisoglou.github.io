@@ -63,6 +63,7 @@ export class AdminComponent implements OnInit {
     this.currentIcon = ''
     this.currentName = ''
     this.currentTags = ''
+    this.innerhtml = ''
   }
 
   getData() {

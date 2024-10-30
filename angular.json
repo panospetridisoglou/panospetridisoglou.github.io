@@ -106,7 +106,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://github.com/panospetridisoglou/panospetridisoglou.github.io",
+            "baseHref": "https://panospetridisoglou.github.io",
             "name": "Portfolio",
             "email": "panoleous@gmail.com",
             "repo": "https://github.com/panospetridisoglou/panospetridisoglou.github.io.git",

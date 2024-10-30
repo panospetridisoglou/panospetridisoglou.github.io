@@ -50,8 +50,7 @@ import { APP_BASE_HREF } from '@angular/common';
     MarkdownModule.forRoot()
   ],
   providers: [
-    { provide: FIREBASE_OPTIONS, useValue: environment.firebase },
-    { provide: APP_BASE_HREF, useValue: "https://github.com/panospetridisoglou/panospetridisoglou.github.io/" }
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
   ],
   bootstrap: [MainComponent],
   schemas: [

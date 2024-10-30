@@ -52,11 +52,18 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true
             },
             "development": {
               "buildOptimizer": false,
-              "optimization": false,
+              "optimization": {
+                "scripts": true,
+                "styles": {
+                  "minify": true,
+                  "inlineCritical": false
+                }
+              },
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
@@ -104,13 +111,13 @@
           }
         },
         "deploy": {
-          "builder": "@angular/fire:deploy",
+          "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "prerender": false,
-            "ssr": false,
-            "browserTarget": "Portfolio:build:production",
-            "firebaseProject": "bio-site-panospet",
-            "firebaseHostingSite": "bio-site-panospet"
+            "baseHref": "https://github.com/panospetridisoglou/panospetridisoglou.github.io",
+            "name": "Portfolio",
+            "email": "panoleous@gmail.com",
+            "repo": "https://github.com/panospetridisoglou/panospetridisoglou.github.io.git",
+            "branch": "github-pages"
           }
         }
       }

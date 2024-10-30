@@ -1,23 +1,24 @@
-<div class="page" >
+<div class="page">
 
-<div  *ngFor="let item of items" 
-    id="{{item.name}}" 
-    [ngStyle]="{'display': search == '' || item.tags.includes(search.toUpperCase())?'block':'none'}" 
-    [ngClass]="['panos-card', (item==selectedItem?'active':'')]" >
-    <div class="panos-tags" >
-            <a  *ngFor="let tag of item.tags " routerLink="." [queryParams]="{ search: tag }" class="panos-tag">{{tag}}</a>
-    </div>
-    <div style="height:10px" ></div>
-    <h5 *ngIf="item!=selectedItem">{{ item.name | slice: 0:19 }}{{ item.name.length > 19 ? "..." : ""}}</h5>
-    <div style="height:10px" ></div>
-    <h6> {{ item.date | date:'longDate'}}  </h6>
-    <div style="height:2px" ></div>
-    <div  *ngIf="item==selectedItem"  style="overflow: auto;height: calc(100vh - 150px);">
-        <div  style="padding:20px;overflow-wrap: anywhere;"  [innerHtml]="item.details"></div>
-    </div>
+    <div *ngFor="let item of items" id="{{item.name}}"
+        [ngStyle]="{'display': search == '' || item.tags.includes(search.toUpperCase())?'block':'none'}"
+        [ngClass]="['panos-card', (item==selectedItem?'active':'')]">
+        <div class="panos-tags">
+            <a *ngFor="let tag of item.tags " routerLink="." [queryParams]="{ search: tag }"
+                class="panos-tag">{{tag}}</a>
+        </div>
+        <div style="height:10px"></div>
+        <h5 *ngIf="item!=selectedItem" (click)="showMore(item)" clickable>{{ item.name | slice: 0:19 }}{{
+            item.name.length > 19 ? "..." : ""}}</h5>
+        <div style="height:10px"></div>
+        <h6> {{ item.date | date:'longDate'}} </h6>
+        <div style="height:2px"></div>
+        <div *ngIf="item==selectedItem" style="overflow: auto;height: calc(100vh - 150px);">
+            <div style="padding:20px;overflow-wrap: anywhere;" [innerHtml]="item.details"></div>
+        </div>
 
-    <img  *ngIf="item!=selectedItem" src="{{item.icon}}" class="panos-card-image">
-    <div  *ngIf="item!=selectedItem" style="height:2px" ></div>
-    <a *ngIf="(item!=selectedItem )" class="panos-card-show-more" (click)="showMore(item)" clickable>Show More</a>
-</div>
+        <img *ngIf="item!=selectedItem" src="{{item.icon}}" class="panos-card-image" (click)="showMore(item)" clickable>
+        <div *ngIf="item!=selectedItem" style="height:2px"></div>
+        <a *ngIf="(item!=selectedItem )" class="panos-card-show-more" (click)="showMore(item)" clickable>Show More</a>
+    </div>
 </div>
